@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY 12 JS</title>
+</head>
+<body>
+    <!-- "DOM understanding and manipulation 
+    Accessing HTML element by tag, id, classname
+    Change innerText and innerHTML 
+    Change styling 
+    Create new HTML element" -->
+    
+    <h2>Accessing HTML element by tag, id, classname</h2>
+
+    <pre>
+        const ele = document.getElementsByTagName("h1");
+        console.log(ele[0].innerText);
+
+        const ele1 = document.getElementsByClassName("para");
+        console.log(ele1[0].innerText);
+
+        const ele2 = document.getElementById("paraid");
+        console.log(ele2.innerText);
+    </pre>
+
+    <h2>Change innerText and innerHTML and change styling </h2>
+
+    <pre>
+        function clickhere() {
+            const text = document.getElementsByTagName("h1");
+            text[0].innerText = "Welcome Onboard";
+            text[0].style.color = "red";
+            text[0].style.backgroundColor = "grey";
+        
+            const text1 = document.getElementById("paraid");
+            text1.innerText = "Here was Lorem Ipsum text";
+        }
+        
+        function innertext() {
+            const ele3 = document.getElementById("task").innerText;
+            alert(ele3);
+        }
+        
+        function innerhtml() {
+            const ele4 = document.getElementById("task").innerHTML;
+            console.log(ele4)
+        }
+    </pre>
+
+    <h2>Creating and Appending new HTML element</h2>
+
+    <pre>
+        function create(){
+            //Creating elements
+            const ele5 = document.createElement("h1");
+            ele5.setAttribute("id","dom");
+            ele5.innerText = "It is created using DOM"
+            console.log(ele5)
+            //Appending the child on screen
+            document.getElementById("parent").appendChild(ele5);
+        }
+    </pre>
+
+
+    <h1>Welcome to Elevation Academy</h1>
+    <button onclick="clickhere()">Click Here</button>
+
+
+    <div id="task">
+        <span>
+            HI, this is span tag.
+        </span>
+        <p>Welcome</p>
+    </div>
+
+    <button onclick="innertext()">Inner Text</button>
+    <button onclick="innerhtml()">Inner HTML</button>
+
+    <!-- Innertext ----- It will return all text contained by an element and all its child elements. -->
+     <!-- InnerHTML ---------- It will return all text including html tags that is contained by an element -->
+
+
+
+    
+    <p class="para">Paragraph having Class name.Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, repellat quos? Ipsum a mollitia ad adipisci perferendis, alias ipsam, delectus, tempora illum quisquam soluta at itaque numquam facilis est ut maiores nisi. Dolore, repellendus aperiam facilis, neque ipsum asperiores at, iste quam qui magnam ut maxime consequatur fugit non mollitia.</p>
+
+    <p id="paraid">Paragraph havid ID. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea consectetur aperiam ipsum quia tempora repudiandae hic accusamus saepe similique sint?</p>
+
+    <button onclick="create()">Creates h1 tag</button>
+
+    <span id="parent"></span>
+
+
+    <script src="./script.js"></script>
+</body>
+</html>
